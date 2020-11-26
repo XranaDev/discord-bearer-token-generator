@@ -1,0 +1,193 @@
+<div id="title">Get Bearer Token:</div>
+<button onclick="redirect()">Authorise</button>
+<div id="token"></div>
+<div class="left" style="width: 33%; position: absolute; margin-top: 2%;">
+    <input type="checkbox" onclick="identify()">identify<br />
+    <input type="checkbox" onclick="email()">email<br />
+    <input type="checkbox" onclick="connections()">connections<br />
+    <input type="checkbox" onclick="guilds()">guilds<br />
+    <input type="checkbox" onclick="guilds()">guilds.join<br />
+    <input type="checkbox" onclick="gdmJoin()">gdm.join<br />
+    <input type="checkbox" onclick="rpc()">rpc<br />
+</div>
+<div class="center" style="width: 33%; position: absolute; margin-top: 2%; margin-left: 33%">    
+    <input type="checkbox" onclick="rpcNotificationsRead()">rpc.notifications.read<br />
+    <input type="checkbox" onclick="bot()">bot<br />
+    <input type="checkbox" onclick="webhookIncoming()">webhook.incoming<br />
+    <input type="checkbox" onclick="messagesRead()">messages.read<br />
+    <input type="checkbox" onclick="applicationsBuildsUpload()">applications.builds.upload<br />
+    <input type="checkbox" onclick="applicationsBuildsRead()">applications.builds.read<br />
+</div>
+<div class="right" style="width: 33%; position: absolute; margin-top: 2%; margin-left: 66%;">    
+    <input type="checkbox" onclick="applicationsCommands()">applications.commands<br />
+    <input type="checkbox" onclick="applicationsStoreUpdate()">applications.store.update<br />
+    <input type="checkbox" onclick="applicationsEntitlements()">applications.entitlements<br />
+    <input type="checkbox" onclick="activitiesRead()">activities.read<br />
+    <input type="checkbox" onclick="activitiesWrite()">activities.write<br />
+    <input type="checkbox" onclick="relationshipsRead()">relationships.read<br />
+</div>
+
+<script>
+    if (window.location.href.includes('access_token=')) {
+        var token = window.location.href
+        token = token.split("access_token=").pop();
+        token = token.split('&')[0];
+        document.getElementById('token').innerHTML = `<br />${token}`;
+    }
+    var options = [];
+    function identify() {
+        if (options.includes("identify")) {
+            options = options.filter(e => e !== 'identify');
+        }
+        else {
+            options.push('identify');
+        }
+    }
+    function email() {
+        if (options.includes("email")) {
+            options = options.filter(e => e !== 'email');
+        }
+        else {
+            options.push('email');
+        }
+    }
+    function connections() {
+        if (options.includes("connections")) {
+            options = options.filter(e => e !== 'connections');
+        }
+        else {
+            options.push('connections');
+        }
+    }
+    function guilds() {
+        if (options.includes("guilds")) {
+            options = options.filter(e => e !== 'guilds');
+        }
+        else {
+            options.push('guilds');
+        }
+    }
+    function guildsJoin() {
+        if (options.includes("guildsJoin")) {
+            options = options.filter(e => e !== 'guildsJoin');
+        }
+        else {
+            options.push('guildsJoin');
+        }
+    }
+    function gdmJoin() {
+        if (options.includes("gdmJoin")) {
+            options = options.filter(e => e !== 'gdmJoin');
+        }
+        else {
+            options.push('gdmJoin');
+        }
+    }
+    function rpc() {
+        if (options.includes("rpc")) {
+            options = options.filter(e => e !== 'rpc');
+        }
+        else {
+            options.push('rpc');
+        }
+    }
+    function rpcNotificationsRead() {
+        if (options.includes("rpcNotificationsRead")) {
+            options = options.filter(e => e !== 'rpcNotificationsRead');
+        }
+        else {
+            options.push('rpcNotificationsRead');
+        }
+    }
+    function bot() {
+        if (options.includes("bot")) {
+            options = options.filter(e => e !== 'bot');
+        }
+        else {
+            options.push('bot');
+        }
+    }
+    function webhookIncoming() {
+        if (options.includes("webhookIncoming")) {
+            options = options.filter(e => e !== 'webhookIncoming');
+        }
+        else {
+            options.push('webhookIncoming');
+        }
+    }
+    function messagesRead() {
+        if (options.includes("messagesRead")) {
+            options = options.filter(e => e !== 'messagesRead');
+        }
+        else {
+            options.push('messagesRead');
+        }
+    }
+    function applicationsBuildsUpload() {
+        if (options.includes("applicationsBuildsUpload")) {
+            options = options.filter(e => e !== 'applicationsBuildsUpload');
+        }
+        else {
+            options.push('applicationsBuildsUpload');
+        }
+    }
+    function applicationsBuildsRead() {
+        if (options.includes("applicationsBuildsRead")) {
+            options = options.filter(e => e !== 'applicationsBuildsRead');
+        }
+        else {
+            options.push('applicationsBuildsRead');
+        }
+    }
+    function applicationsCommands() {
+        if (options.includes("applicationsCommands")) {
+            options = options.filter(e => e !== 'applicationsCommands');
+        }
+        else {
+            options.push('applicationsCommands');
+        }
+    }
+    function applicationsStoreUpdate() {
+        if (options.includes("applicationsStoreUpdate")) {
+            options = options.filter(e => e !== 'applicationsStoreUpdate');
+        }
+        else {
+            options.push('applicationsStoreUpdate');
+        }
+    }
+    function applicationsEntitlements() {
+        if (options.includes("applicationsEntitlements")) {
+            options = options.filter(e => e !== 'applicationsEntitlements');
+        }
+        else {
+            options.push('applicationsEntitlements');
+        }
+    }
+    function activitiesRead() {
+        if (options.includes("activitiesRead")) {
+            options = options.filter(e => e !== 'activitiesRead');
+        }
+        else {
+            options.push('activitiesRead');
+        }
+    }
+    function activitiesWrite() {
+        if (options.includes("activitiesWrite")) {
+            options = options.filter(e => e !== 'activitiesWrite');
+        }
+        else {
+            options.push('activitiesWrite');
+        }
+    }
+    function relationshipsRead() {
+        if (options.includes("relationshipsRead")) {
+            options = options.filter(e => e !== 'relationshipsRead');
+        }
+        else {
+            options.push('relationshipsRead');
+        }
+    }
+    function redirect() {
+        window.location.href = `https://discord.com/api/oauth2/authorize?client_id=781595194130038795&redirect_uri=https%3A%2F%2Ftools.sy.com.hr%2Fdiscord-bearer-token-generator&response_type=token&scope=${options.join('%20')}`
+    }
+</script>
